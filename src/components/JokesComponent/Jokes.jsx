@@ -24,7 +24,7 @@ function Jokes({ loading }) {
     return <p>Loading ...</p>;
   }
   return (
-    <div class="d-flex justify-content-center">
+    <div className="d-flex justify-content-center">
       <Jumbotron>
         <Title>START YOUR DAY SMILING</Title>
         <TextJoke>{jokesState.joke}</TextJoke>
