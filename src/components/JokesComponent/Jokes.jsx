@@ -1,36 +1,39 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
-import InfoJokes from './InfoJokes'
-import IsLoadingJokes from '../JokesComponent/IsLoadingJokes'
+import React from "react";
+import { useState, useEffect } from "react";
+import { Jumbotron, Button, Title, TextJoke } from "../Styled";
 
-const Jokes = () => {
-    const JokesLoading = IsLoadingJokes(InfoJokes);
-    const [jokesState, setJokesState] =  useState({
-      loading: false,
-      repos: null,
-    });
+function Jokes({ loading }) {
+  const [jokesState, setJokesState] = useState(null);
 
-    useEffect(() => {
-        setJokesState({ loading: true });
-        const jokeData = fetch('https://icanhazdadjoke.com/', {
-        headers: {
-            'Accept': 'application/json'
-        }
-        });
-        jokeData.then((response) => response.json())
-        .then((dataJokes) => {
-            setJokesState({ loading: false, repos: dataJokes });
-        });
-    }, [setJokesState]);
+  useEffect(() => {
+    getJoke();
+  }, [loading]);
 
+  // HTTP Request
+  const getJoke = () => {
+    fetch("https://icanhazdadjoke.com/", {
+      headers: {
+        Accept: "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((dataJoke) => setJokesState(dataJoke));
+  };
 
-    return (
-
-        <div>
-        <div class="container">
-        <JokesLoading isLoading={jokesState.loading} repos={jokesState.repos} />
-        </div>
-        </div>
-    );
+  if (jokesState === null) {
+    return <p>Loading ...</p>;
+  }
+  return (
+    <div class="d-flex justify-content-center">
+      <Jumbotron>
+        <Title>START YOUR DAY SMILING</Title>
+        <TextJoke>{jokesState.joke}</TextJoke>
+        <Button className="btn-lg btn-block" onClick={() => getJoke()}>
+          Another Joke!
+        </Button>
+      </Jumbotron>
+    </div>
+  );
 }
+
 export default Jokes;

@@ -1,35 +1,35 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
-import InfoWeather from './InfoWeather'
-import IsLoading from './IsLoading'
+import React from "react";
+import { useState, useEffect } from "react";
+import { Card, TextWeather, Title } from "../Styled";
 
-const Weather = () => {
-    const WeatherLoading = IsLoading(InfoWeather);
-    const [weatherState, setWeatherState] =  useState({
-      loading: false,
-      repos: null,
-    });
+function Weather({ loading }) {
+  const [weatherState, setWeatherState] = useState(null);
 
+  useEffect(() => {
+    fetch(
+      "http://api.weatherapi.com/v1/current.json?key=8c9873737bea4e949fb201622210605&q=Barcelona&aqi=no",
+      {
+        headers: {
+          Accept: "application/json",
+        },
+      }
+    )
+      .then((response) => response.json())
+      .then((dataWeather) => setWeatherState(dataWeather));
+  }, [loading]);
 
-useEffect(() => {
-    setWeatherState({ loading: true });
-    const apiUrl = 'https://www.el-tiempo.net/api/json/v2/provincias/08/municipios/08019';
-    fetch(apiUrl)
-        .then((dataApi) => dataApi.json())
-        .then((dataWeather) => {
-        setWeatherState({ loading: false, repos: dataWeather });
-        });
-}, [setWeatherState]);
-
-
-
-return (
-
-    <div>
-    <div class="container">
-    <WeatherLoading isLoading={weatherState.loading} repos={weatherState.repos} />
-    </div>
-    </div>
-);
+  if (weatherState === null) {
+    return <p>Loading ...</p>;
+  }
+  return (
+    <React.Fragment>
+      <Card>
+        <TextWeather>{weatherState.location.name}</TextWeather>
+        <Title>{weatherState.current.temp_c}º</Title>
+        <TextWeather>{weatherState.current.condition.text}</TextWeather>
+      </Card>
+    </React.Fragment>
+  );
 }
+
 export default Weather;
