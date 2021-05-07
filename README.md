@@ -1,12 +1,10 @@
-# Sprint-7-REACT-2
+# Sprint-8-REACT-APP
 
-## Visuals
-![alt text](https://github.com/monCecilia/)
-![alt text](https://github.com/monCecilia/)
+![alt text](https://github.com/monCecilia/readme-img/blob/main/WeatherApp.png)
 
 
 ## Description
-This interactive React native website shows the current weather and some random jokes. We applybasic styles, using React-Bootstrap, React-Router and Styled-Components and add actions so that the user can interact with our application. In both cases, we fetch data from REST API.
+This interactive React native website shows the current weather and some random jokes. We apply basic styles, using React-Bootstrap and Styled-Components and add actions so that the user can interact with our application. In both cases, we fetch data from REST API.
 
 ## Technologies
 
@@ -15,7 +13,7 @@ This interactive React native website shows the current weather and some random 
 - HTML
 - CSS
 - Bootstrap
-- Libraries (React-Bootstrap, Material UI, React-Router)
+- Libraries (React-Bootstrap, Styled-Components, React-Router)
 
 ## Author Info 
 Cecilia Moneta
