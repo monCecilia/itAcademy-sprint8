@@ -10,16 +10,13 @@ function Weather({ loading }) {
     getWeather()
     
   }, [loading]);
-  
+
   const getWeather = () => {
-    fetch(
-      "http://api.weatherapi.com/v1/current.json?key=8c9873737bea4e949fb201622210605&q=Barcelona&aqi=no",
-      {
-        headers: {
-          Accept: "application/json",
-        },
-      }
-    )
+    fetch("http://api.weatherapi.com/v1/current.json?key=8c9873737bea4e949fb201622210605&q=Barcelona&aqi=no", {
+      headers: {
+        Accept: "application/json",
+      },
+    })
       .then((response) => response.json())
       .then((dataWeather) => setWeatherState(dataWeather));
 
