@@ -128,11 +128,11 @@ export const TextJoke = styled.p`
   
   /* Medium devices (tablets, 768px and up) */
   @media (min-width: 768px) { 
-    font-size: 1.6rem;
+    font-size: 1.3rem;
   }
   /* Large devices (desktops, 992px and up) */
   @media (min-width: 992px) {
-    font-size: 2rem;
+    font-size: 1.5rem;
 
 
   }
