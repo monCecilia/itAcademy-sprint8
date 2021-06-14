@@ -138,7 +138,7 @@ export const TextJoke = styled.p`
   }
   /* Extra large devices (large desktops, 1200px and up) */
   @media (min-width: 1200px) {
-    font-size: 2.3rem;
+   
   }
   
 `;
