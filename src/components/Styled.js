@@ -14,12 +14,12 @@ export const Button = styled.button`
    }
   /* Large devices (desktops, 992px and up) */
   @media (min-width: 992px) {
-    font-size: 2rem;
+    font-size:1.3rem;
     padding:1rem;
    }
   /* Extra large devices (large desktops, 1200px and up) */
   @media (min-width: 1200px) {
-    font-size: 2.3rem;
+  
   }
 `;
 
@@ -132,7 +132,7 @@ export const TextJoke = styled.p`
   }
   /* Large devices (desktops, 992px and up) */
   @media (min-width: 992px) {
-    font-size: 1.5rem;
+    
 
 
   }
@@ -158,7 +158,7 @@ export const TextWeather = styled.p`
   }
   /* Extra large devices (large desktops, 1200px and up) */
   @media (min-width: 1200px) {
-    font-size: 2rem;
+   
   }
   
 `;
