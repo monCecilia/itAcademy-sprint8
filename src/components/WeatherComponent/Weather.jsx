@@ -12,7 +12,7 @@ function Weather({ loading }) {
   }, [loading]);
 
   const getWeather = () => {
-    fetch("http://api.weatherapi.com/v1/current.json?key=8c9873737bea4e949fb201622210605&q=Barcelona&aqi=no", {
+    fetch("https://api.weatherapi.com/v1/current.json?key=8c9873737bea4e949fb201622210605&q=Barcelona&aqi=no", {
       headers: {
         Accept: "application/json",
       },
