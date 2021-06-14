@@ -2,6 +2,8 @@
 
 ![alt text](https://github.com/monCecilia/readme-img/blob/main/WeatherApp.png)
 
+## Demo
+https://codesandbox.io/s/weatherjokesapp-hlhir
 
 ## Description
 This interactive React native website shows the current weather and some random jokes. We apply basic styles, using React-Bootstrap and Styled-Components and add actions so that the user can interact with our application. In both cases, we fetch data from REST API.
